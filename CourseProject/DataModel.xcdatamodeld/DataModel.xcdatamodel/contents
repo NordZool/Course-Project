@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Postfix" representedClassName=".Postfix" syncable="YES">
+        <attribute name="str" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Prefix" representedClassName=".Prefix" syncable="YES">
+        <attribute name="str" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Root" representedClassName=".Root" syncable="YES">
+        <attribute name="str" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Suffix" representedClassName=".Suffix" syncable="YES">
+        <attribute name="str" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Word" representedClassName=".Word" syncable="YES">
+        <attribute name="postfix" optional="YES" attributeType="String"/>
+        <attribute name="prefix" optional="YES" attributeType="String"/>
+        <attribute name="root" optional="YES" attributeType="String"/>
+        <attribute name="suffix" optional="YES" attributeType="String"/>
+    </entity>
+</model>
