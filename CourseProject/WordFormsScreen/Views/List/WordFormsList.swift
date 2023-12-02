@@ -14,6 +14,9 @@ struct WordFormsList: View {
     
     private var managedObjectContext: NSManagedObjectContext
     
+    //only for WordFormRow and ViewModels
+    private let wordFormType: WordFormsEnum
+    
     init(provider: Provider, wordFormType:WordFormsEnum) {
         let newContext = provider.newContext
         
@@ -21,9 +24,11 @@ struct WordFormsList: View {
         self.createFieldViewModel = CreateFieldViewModel(context: newContext, wordFormType: wordFormType)
         self.wordFormsViewModel = WordFormViewModel(managedObjectContext: newContext, typeWordForm: wordFormType)
         
+        self.wordFormType = wordFormType
     }
     
     var body: some View {
+        
         ScrollView {
             WordFormCreateField(viewModel: createFieldViewModel)
                 .padding(.top,10)
@@ -36,13 +41,16 @@ struct WordFormsList: View {
                         .padding(.bottom,-20)
                     
                     ForEach(wordForms.sorted(by: {$0.str < $1.str})) { wordForm in
-                        WordFormRow(item: wordForm, managedObjectContext)
+                        WordFormRow(form: wordForm, context:managedObjectContext, wordFormType)
+                            
                     }
+                    
                     
                 }
                 .padding(.bottom,20)
             }
         }
+        
     }
 }
 

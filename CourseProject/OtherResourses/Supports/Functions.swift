@@ -43,5 +43,31 @@ struct Functions {
         return dictionary
     }
     
+    //Проверяет, существует ли словоформа,
+    //равная переданной строке.
+    //испольщуется для исбежания добавления
+    //дубликатов словоформ в CreateFieldViewModel и WordFormRow
+    static func contains(str:String, in form: WordFormsEnum,_ context:NSManagedObjectContext) -> Bool {
+        ((try? (context.fetch(Functions.fetchRequest(as: form)) as? [WordForm])) ?? []).contains(where: {$0.str == str})
+    }
+    
+    //преобразует введенный пользователем текст в
+    //корректный для словоформ.
+    //Ипользуется в CreateFieldViewModel и WordFormRow
+    static func correct(str: String, as form:WordFormsEnum) -> String {
+        let sumbolsForDelete =  " .,;:'/|[]{}!?@#$%^&*()_-+=><"
+        //удаляем бессмысленные символы
+        var text:String = str.filter({!sumbolsForDelete.contains($0)})
+        
+        text = text.lowercased()
+        if form == .pref {
+            //делаем первую букву заглавной
+            //т.к приставка - начало слова
+            text = ((text.first?.uppercased() ?? "") + text.dropFirst(1))
+        }
+        
+        return text
+    }
+    
     
 }

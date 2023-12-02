@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainScreen: View {
     
     @Environment(\.managedObjectContext) private var context
     var provider = Provider.shared
@@ -72,7 +72,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainScreen()
             .environment(\.managedObjectContext, Provider.shared.viewContext)
     }
 }

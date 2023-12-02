@@ -11,7 +11,7 @@ import SwiftUI
 struct CourseProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainScreen()
                 .environment(\.managedObjectContext, Provider.shared.viewContext)
         }
     }

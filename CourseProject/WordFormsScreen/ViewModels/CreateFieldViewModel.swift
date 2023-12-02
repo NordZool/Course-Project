@@ -20,27 +20,22 @@ class CreateFieldViewModel : ObservableObject {
     }
     
     func createWordForm(from text:String) {
+        //переопределяю text
+        let text = Functions.correct(str: text, as: wordFormType)
+        
         //если такой словоформы еще нету
-        if !(try! context.fetch(Functions.fetchRequest(as: wordFormType)) as! [WordForm]).contains(where: {$0.str == text}) {
+        if !(Functions.contains(str: text, in: wordFormType, context)) {
             let newWordForm: WordForm
-            //делаю text изменьчивым
-            var text = text
             
             switch wordFormType {
             case .pref:
                 newWordForm = Prefix(context: context)
-                text = text.lowercased()
-                //делаем первую букву заглавной
-                text = ((text.first?.uppercased() ?? "") + text.dropFirst(1))
             case .rt:
                 newWordForm = Root(context: context)
-                text = text.lowercased()
             case .suf:
                 newWordForm = Suffix(context: context)
-                text = text.lowercased()
             case .postf:
                 newWordForm = Postfix(context: context)
-                text = text.lowercased()
             }
             newWordForm.str = text
             
