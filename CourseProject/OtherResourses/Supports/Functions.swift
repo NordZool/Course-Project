@@ -43,6 +43,24 @@ struct Functions {
         return dictionary
     }
     
+    //словарь для составления списка
+    //слов по алфавиту
+    static func alphabet(words: [Word]?) -> [String:[Word]] {
+        var dictionary: [String:[Word]] = [:]
+        if let words = words {
+            for word in words {
+                let fullWord = word.getFullWord() ?? ""
+                if !fullWord.isEmpty {
+                    dictionary[String(fullWord[fullWord.startIndex]),default: []] += [word]
+                } else {
+                    dictionary["empty", default: []] += [word]
+                }
+            }
+        }
+        
+        return dictionary
+    }
+    
     //Проверяет, существует ли словоформа,
     //равная переданной строке.
     //испольщуется для исбежания добавления
