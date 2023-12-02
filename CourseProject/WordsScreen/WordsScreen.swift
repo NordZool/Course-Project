@@ -7,12 +7,20 @@
 
 import SwiftUI
 
-struct WordScreen: View {
+struct WordsScreen: View {
+    @ObservedObject var viewModel: WordsScreenViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(viewModel.wordsDictionary.sorted(by: {$0.key < $1.key}), id: \.key) {key, values in
+            Text(key)
+                .font(.title)
+            ForEach(values) {word in
+                Text(word.getFullWord() ?? "  ")
+            }
+        }
     }
 }
 
 #Preview {
-    WordScreen()
+    WordsScreen(viewModel: .init(managedObjectContext: Provider.shared.viewContext))
 }

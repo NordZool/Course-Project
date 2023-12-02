@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class Word : NSManagedObject {
+class Word : NSManagedObject, Identifiable {
     @NSManaged var prefix: String?
     @NSManaged var root: String?
     @NSManaged var suffix: String?
@@ -52,5 +52,13 @@ class Word : NSManagedObject {
                 postfix = newValue
             }
         }
+    }
+    
+    //Запрашивает и возвращает данные для WordsScreenViewModel
+    static func resultsController(context: NSManagedObjectContext, sortDescriptors: [NSSortDescriptor] = []) -> NSFetchedResultsController<Word> {
+        let request = NSFetchRequest<Word>(entityName: "Word")
+        request.sortDescriptors = sortDescriptors.isEmpty ? nil : sortDescriptors
+        
+        return NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
     }
 }

@@ -9,15 +9,15 @@ import Foundation
 import CoreData
 
 class WordFormViewModel : NSObject, NSFetchedResultsControllerDelegate, ObservableObject {
-    private let wordFormController: NSFetchedResultsController<WordForm>
+    private let wordsFormController: NSFetchedResultsController<WordForm>
     
     init(managedObjectContext: NSManagedObjectContext, typeWordForm: WordFormsEnum) {
-        let sortDescriptor = [NSSortDescriptor(keyPath: \WordForm.str, ascending: true)]
-        wordFormController = WordForm.resultsController(context: managedObjectContext, typeWordForm, sortDescriptors: sortDescriptor)
+        let sortDescriptor = [NSSortDescriptor(keyPath: \WordForm.str, ascending: false)]
+        wordsFormController = WordForm.resultsController(context: managedObjectContext, typeWordForm, sortDescriptors: sortDescriptor)
         
         super.init()
-        wordFormController.delegate = self
-        try? wordFormController.performFetch()
+        wordsFormController.delegate = self
+        try? wordsFormController.performFetch()
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -28,6 +28,6 @@ class WordFormViewModel : NSObject, NSFetchedResultsControllerDelegate, Observab
 //    }
     
     var wordForms: [String:[WordForm]] {
-        Functions.alphabet(forms: wordFormController.fetchedObjects)
+        Functions.alphabet(forms: wordsFormController.fetchedObjects)
     }
 }

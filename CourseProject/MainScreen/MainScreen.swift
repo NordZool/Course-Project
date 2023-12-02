@@ -41,8 +41,8 @@ struct MainScreen: View {
                     }
                     
                     NavigationLink {
-                        BackButton()
-                            .toolbar(.hidden)
+                        WordsScreen(viewModel: .init(managedObjectContext: provider.viewContext))
+//                            .toolbar(.hidden)
                         //                    .navigationBarBackButtonHidden()
                     } label: {
                         Text("Список слов")

@@ -30,6 +30,8 @@
 		8499F6AC2B187F8C0032DF59 /* CreatingWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499F6AB2B187F8C0032DF59 /* CreatingWordView.swift */; };
 		8499F6AE2B187F9E0032DF59 /* CreateWordFormList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499F6AD2B187F9E0032DF59 /* CreateWordFormList.swift */; };
 		8499F6B02B1899430032DF59 /* MainScreenButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499F6AF2B1899430032DF59 /* MainScreenButtonModifier.swift */; };
+		84CA2C5D2B1B3FD100BCFF9C /* WordsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA2C5C2B1B3FD100BCFF9C /* WordsScreen.swift */; };
+		84CA2C602B1B403800BCFF9C /* WordsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA2C5F2B1B403800BCFF9C /* WordsScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		8499F6AB2B187F8C0032DF59 /* CreatingWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingWordView.swift; sourceTree = "<group>"; };
 		8499F6AD2B187F9E0032DF59 /* CreateWordFormList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWordFormList.swift; sourceTree = "<group>"; };
 		8499F6AF2B1899430032DF59 /* MainScreenButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButtonModifier.swift; sourceTree = "<group>"; };
+		84CA2C5C2B1B3FD100BCFF9C /* WordsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsScreen.swift; sourceTree = "<group>"; };
+		84CA2C5F2B1B403800BCFF9C /* WordsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +96,7 @@
 				84331AE72B17F4B500B775FA /* CourseProjectApp.swift */,
 				8499F6A42B187F1A0032DF59 /* CreateScreen */,
 				8499F6942B187E160032DF59 /* WordFormsScreen */,
-				8499F6932B187DF00032DF59 /* WordScreen */,
+				8499F6932B187DF00032DF59 /* WordsScreen */,
 				8499F68E2B187DB30032DF59 /* Models */,
 				8499F6822B187CC20032DF59 /* Provider */,
 				8499F6832B187D100032DF59 /* OtherResourses */,
@@ -165,11 +169,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		8499F6932B187DF00032DF59 /* WordScreen */ = {
+		8499F6932B187DF00032DF59 /* WordsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				84CA2C5C2B1B3FD100BCFF9C /* WordsScreen.swift */,
+				84CA2C5E2B1B401900BCFF9C /* ViewModels */,
 			);
-			path = WordScreen;
+			path = WordsScreen;
 			sourceTree = "<group>";
 		};
 		8499F6942B187E160032DF59 /* WordFormsScreen */ = {
@@ -234,6 +240,14 @@
 				8499F6AB2B187F8C0032DF59 /* CreatingWordView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		84CA2C5E2B1B401900BCFF9C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				84CA2C5F2B1B403800BCFF9C /* WordsScreenViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,11 +324,13 @@
 				8499F69F2B187EC50032DF59 /* WordFormsList.swift in Sources */,
 				8499F69C2B187E850032DF59 /* WordFormsScreen.swift in Sources */,
 				8499F6902B187DC60032DF59 /* WordForm.swift in Sources */,
+				84CA2C602B1B403800BCFF9C /* WordsScreenViewModel.swift in Sources */,
 				8499F6892B187D5E0032DF59 /* WordFormsEnum.swift in Sources */,
 				8499F67F2B187B700032DF59 /* DataModel.xcdatamodeld in Sources */,
 				84331AEA2B17F4B500B775FA /* MainScreen.swift in Sources */,
 				8499F6A12B187EDF0032DF59 /* WordFormRow.swift in Sources */,
 				8499F6AA2B187F760032DF59 /* CreateScreenView.swift in Sources */,
+				84CA2C5D2B1B3FD100BCFF9C /* WordsScreen.swift in Sources */,
 				84331AE82B17F4B500B775FA /* CourseProjectApp.swift in Sources */,
 				8499F69A2B187E5F0032DF59 /* WordFormViewModel.swift in Sources */,
 				8499F6AE2B187F9E0032DF59 /* CreateWordFormList.swift in Sources */,
