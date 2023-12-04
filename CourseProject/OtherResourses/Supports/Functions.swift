@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 //singleton struct
 struct Functions {
@@ -87,5 +88,18 @@ struct Functions {
         return text
     }
     
+    //Возвращает цвет, соответствубющей словоформы
+    static func wordFormToColor(as form: WordFormsEnum) -> Color {
+        switch form {
+        case .pref:
+            Color.blue
+        case .rt:
+            Color.green
+        case .suf:
+            Color.red
+        case .postf:
+            Color.black
+        }
+    }
     
 }

@@ -30,8 +30,12 @@
 		8499F6AC2B187F8C0032DF59 /* CreatingWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499F6AB2B187F8C0032DF59 /* CreatingWordView.swift */; };
 		8499F6AE2B187F9E0032DF59 /* CreateWordFormList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499F6AD2B187F9E0032DF59 /* CreateWordFormList.swift */; };
 		8499F6B02B1899430032DF59 /* MainScreenButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499F6AF2B1899430032DF59 /* MainScreenButtonModifier.swift */; };
+		84C4F5792B1DC43300C1AA13 /* WordFormMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4F5782B1DC43300C1AA13 /* WordFormMark.swift */; };
+		84C4F57C2B1DC4D400C1AA13 /* WordFormShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4F57B2B1DC4D400C1AA13 /* WordFormShape.swift */; };
 		84CA2C5D2B1B3FD100BCFF9C /* WordsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA2C5C2B1B3FD100BCFF9C /* WordsScreen.swift */; };
 		84CA2C602B1B403800BCFF9C /* WordsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA2C5F2B1B403800BCFF9C /* WordsScreenViewModel.swift */; };
+		84CA2C622B1B93E100BCFF9C /* WordsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA2C612B1B93E100BCFF9C /* WordsList.swift */; };
+		84CA2C662B1B95DC00BCFF9C /* WordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA2C652B1B95DC00BCFF9C /* WordRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,8 +63,12 @@
 		8499F6AB2B187F8C0032DF59 /* CreatingWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingWordView.swift; sourceTree = "<group>"; };
 		8499F6AD2B187F9E0032DF59 /* CreateWordFormList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWordFormList.swift; sourceTree = "<group>"; };
 		8499F6AF2B1899430032DF59 /* MainScreenButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButtonModifier.swift; sourceTree = "<group>"; };
+		84C4F5782B1DC43300C1AA13 /* WordFormMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFormMark.swift; sourceTree = "<group>"; };
+		84C4F57B2B1DC4D400C1AA13 /* WordFormShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFormShape.swift; sourceTree = "<group>"; };
 		84CA2C5C2B1B3FD100BCFF9C /* WordsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsScreen.swift; sourceTree = "<group>"; };
 		84CA2C5F2B1B403800BCFF9C /* WordsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsScreenViewModel.swift; sourceTree = "<group>"; };
+		84CA2C612B1B93E100BCFF9C /* WordsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsList.swift; sourceTree = "<group>"; };
+		84CA2C652B1B95DC00BCFF9C /* WordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +155,7 @@
 			children = (
 				8499F68A2B187D8C0032DF59 /* CustomTabView.swift */,
 				8499F68C2B187D9A0032DF59 /* BackButton.swift */,
+				84C4F57A2B1DC4B700C1AA13 /* WordFormMark */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				84CA2C5C2B1B3FD100BCFF9C /* WordsScreen.swift */,
+				84CA2C642B1B958800BCFF9C /* List */,
 				84CA2C5E2B1B401900BCFF9C /* ViewModels */,
 			);
 			path = WordsScreen;
@@ -242,12 +252,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		84C4F57A2B1DC4B700C1AA13 /* WordFormMark */ = {
+			isa = PBXGroup;
+			children = (
+				84C4F5782B1DC43300C1AA13 /* WordFormMark.swift */,
+				84C4F57B2B1DC4D400C1AA13 /* WordFormShape.swift */,
+			);
+			path = WordFormMark;
+			sourceTree = "<group>";
+		};
 		84CA2C5E2B1B401900BCFF9C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				84CA2C5F2B1B403800BCFF9C /* WordsScreenViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		84CA2C642B1B958800BCFF9C /* List */ = {
+			isa = PBXGroup;
+			children = (
+				84CA2C612B1B93E100BCFF9C /* WordsList.swift */,
+				84CA2C652B1B95DC00BCFF9C /* WordRow.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +350,9 @@
 			files = (
 				8499F68D2B187D9A0032DF59 /* BackButton.swift in Sources */,
 				8499F69F2B187EC50032DF59 /* WordFormsList.swift in Sources */,
+				84C4F57C2B1DC4D400C1AA13 /* WordFormShape.swift in Sources */,
 				8499F69C2B187E850032DF59 /* WordFormsScreen.swift in Sources */,
+				84CA2C622B1B93E100BCFF9C /* WordsList.swift in Sources */,
 				8499F6902B187DC60032DF59 /* WordForm.swift in Sources */,
 				84CA2C602B1B403800BCFF9C /* WordsScreenViewModel.swift in Sources */,
 				8499F6892B187D5E0032DF59 /* WordFormsEnum.swift in Sources */,
@@ -334,8 +364,10 @@
 				84331AE82B17F4B500B775FA /* CourseProjectApp.swift in Sources */,
 				8499F69A2B187E5F0032DF59 /* WordFormViewModel.swift in Sources */,
 				8499F6AE2B187F9E0032DF59 /* CreateWordFormList.swift in Sources */,
+				84CA2C662B1B95DC00BCFF9C /* WordRow.swift in Sources */,
 				8499F6872B187D520032DF59 /* Functions.swift in Sources */,
 				8499F6B02B1899430032DF59 /* MainScreenButtonModifier.swift in Sources */,
+				84C4F5792B1DC43300C1AA13 /* WordFormMark.swift in Sources */,
 				8499F6922B187DD50032DF59 /* Word.swift in Sources */,
 				8499F6A32B187EF40032DF59 /* WordFormCreateField.swift in Sources */,
 				8499F6A82B187F5A0032DF59 /* CreateScreenViewModel.swift in Sources */,
