@@ -23,9 +23,6 @@ class WordFormViewModel : NSObject, NSFetchedResultsControllerDelegate, Observab
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         objectWillChange.send()
     }
-//    var wordForms: [WordForm] {
-//        wordFormController.fetchedObjects ?? []
-//    }
     
     var wordForms: [String:[WordForm]] {
         Functions.alphabet(forms: wordsFormController.fetchedObjects)

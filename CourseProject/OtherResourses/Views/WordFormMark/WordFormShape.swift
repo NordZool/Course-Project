@@ -7,21 +7,6 @@
 
 import Foundation
 import SwiftUI
-//
-//struct PrefixShape : View {
-//    var body: some View {
-//        HStack {
-//            Rectangle()
-//                .frame(width: .infinity,height: 5)
-//                .padding(.trailing,-8)
-//            Rectangle()
-//                .frame(width: 5)
-//                .padding(.top,22.5)
-//        }
-//        .frame(height:50)
-//
-//    }
-//}
 
 struct PrefixShape : Shape {
     let lineWidth: CGFloat
@@ -94,13 +79,13 @@ struct PostfixShape : Shape {
         }
     }
 }
-    
-    
-    #Preview {
-        HStack {
 
-            Rectangle()
-                .clipShape(SuffixShape(lineWidth: 2))
-        }
+
+#Preview {
+    HStack {
         
+        Rectangle()
+            .clipShape(SuffixShape(lineWidth: 2))
     }
+    
+}

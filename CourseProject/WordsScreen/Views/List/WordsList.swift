@@ -17,12 +17,12 @@ struct WordsList: View {
                     Text(key.uppercased())
                         .padding(.leading, 10)
                         .font(.title)
-                        
+                    
                     ForEach(values) {word in
-                            WordRow(word: word)
-                                .font(.title2)
-                                .padding(.leading,40)
-                                
+                        WordRow(word: word)
+                            .font(.title2)
+                            .padding(.leading,40)
+                        
                         
                         
                     }

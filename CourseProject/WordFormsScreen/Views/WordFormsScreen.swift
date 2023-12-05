@@ -20,9 +20,9 @@ struct WordFormsScreen: View {
                         provider: provider,
                         wordFormType: wordForm
                     )
-                        .padding(.vertical,27)
-                        .padding(.top,13)
-                        .tag(wordForm)
+                    .padding(.vertical,27)
+                    .padding(.top,13)
+                    .tag(wordForm)
                 }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))

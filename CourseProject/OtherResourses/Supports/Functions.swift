@@ -52,7 +52,7 @@ struct Functions {
             for word in words {
                 let fullWord = word.getFullWord() ?? ""
                 if !fullWord.isEmpty {
-                    dictionary[String(fullWord[fullWord.startIndex]),default: []] += [word]
+                    dictionary[String(fullWord[fullWord.startIndex]).lowercased(),default: []] += [word]
                 } else {
                     dictionary["empty", default: []] += [word]
                 }

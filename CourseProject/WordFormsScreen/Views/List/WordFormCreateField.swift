@@ -34,8 +34,7 @@ struct WordFormCreateField: View {
                         createText = ""
                     }
                 }
-//                .frame(width: nameIsFocusedAnimated)
-                
+            
             Group {
                 Button {
                     //someDestructive

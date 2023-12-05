@@ -33,8 +33,8 @@ struct WordsSearchView: View {
                         .animation(animation, value: searchIsFocused)
                 }
             }
-        
-
+            
+            
             
             
             Capsule()

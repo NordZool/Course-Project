@@ -10,6 +10,7 @@ import SwiftUI
 struct CreatingWordView: View {
     
     //связываю для анимерованной прокрутки
+    //и переходу к приставкам после создания слова
     @Binding var wordFormNow: WordFormsEnum
     @ObservedObject var viewModel: CreateScreenViewModel
     
@@ -72,11 +73,11 @@ struct CreatingWordView: View {
                 
                 Button  {
                     //если все словоформы
-                    //имеют nil - выдать ошибку
+                    //имеют nil - выдать alert ошибки
                     if viewModel.word.getFullWord() == nil {
                         errorAlert = true
                     } else {
-                        //иначе выдать уведомление подтверждения
+                        //иначе выдать alert подтверждения
                         acceptAlert = true
                     }
                 } label: {
@@ -140,6 +141,6 @@ fileprivate struct Test: View {
 struct CreatingWordView_Previews: PreviewProvider {
     static var previews: some View {
         Test()
-
+        
     }
 }

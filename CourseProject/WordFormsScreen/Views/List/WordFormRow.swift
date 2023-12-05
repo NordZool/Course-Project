@@ -158,8 +158,8 @@ struct WordFormRow: View {
         }
     }
     
-    //при использование удаления и изменения
-    //не надо прописовать сохранение
+    //при использование delete() и edit()
+    //не надо использовать save() - он используется внутри func
     private func delete() {
         withAnimation(.easeInOut(duration: 0.1)) {
             context.delete(form)

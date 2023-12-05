@@ -15,8 +15,7 @@ class WordForm :  NSManagedObject, Identifiable {
     
     static func resultsController(context: NSManagedObjectContext,_ typeWordForm: WordFormsEnum , sortDescriptors: [NSSortDescriptor] = []) ->
     NSFetchedResultsController<WordForm> {
-        //под каждый enum написать request:
-
+        
         let request:NSFetchRequest<WordForm>
         switch typeWordForm {
         case .pref:

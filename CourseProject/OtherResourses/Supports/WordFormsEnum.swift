@@ -18,7 +18,7 @@ enum WordFormsEnum : String, CaseIterable, Hashable {
                 .postf
         case .postf:
             //некуда переходить
-            //после постфиксов
+            //после окончания
                 .postf
         }
     }

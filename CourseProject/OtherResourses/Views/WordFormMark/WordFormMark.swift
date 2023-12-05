@@ -28,8 +28,8 @@ struct WordFormMark: View {
                 .wordFormMarkModefier()
                 .padding(.leading,0.5)
                 .offset(y:1)
-                
-                
+            
+            
         case .suf:
             SuffixShape(lineWidth: lineWidth+1)
                 .wordFormMarkModefier()
@@ -40,7 +40,7 @@ struct WordFormMark: View {
                 .stroke(lineWidth: lineWidth-1)
                 .wordFormMarkModefier()
                 .offset(y:5)
-                
+            
         }
     }
 }
@@ -66,7 +66,7 @@ fileprivate extension View {
                 VStack {
                     WordFormMark(as: wordForm)
                     Text("рсвлслв")
-                       
+                    
                 }
                 .padding(.vertical)
             }

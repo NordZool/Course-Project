@@ -14,7 +14,7 @@ struct MainScreenButtonModifier : ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(font)
-            //сделать жирность
+        //сделать жирность
             .foregroundStyle(.black)
             .padding(5)
             .overlay(

@@ -14,18 +14,18 @@ struct CustomTabView: View {
         VStack {
             Spacer()
             Divider()
-                HStack {
-                    ForEach(WordFormsEnum.allCases, id: \.self) {form in
-                        Button {
-                            withAnimation(.linear(duration: 0.3)) {
-                                wordFormNow = form
-                            } //чтобы плавно между экранами переходило
-                        } label: {
-                            Text(form.rawValue)
-                                .fontWeight(.bold)
-                                .foregroundColor(wordFormNow == form ? .black : .gray)
-                        }
+            HStack {
+                ForEach(WordFormsEnum.allCases, id: \.self) {form in
+                    Button {
+                        withAnimation(.linear(duration: 0.3)) {
+                            wordFormNow = form
+                        } //чтобы плавно между экранами переходило
+                    } label: {
+                        Text(form.rawValue)
+                            .fontWeight(.bold)
+                            .foregroundColor(wordFormNow == form ? .black : .gray)
                     }
+                }
             }
         }
     }

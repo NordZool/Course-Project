@@ -40,7 +40,11 @@ struct CreateWordFormList: View {
                                 if word[typeWordForm] != wordForm.str {
                                     word[typeWordForm] = wordForm.str
                                     
+                                    //инициализирую самого себя чтобы
+                                    //все view использующие
+                                    //word обновились сразу
                                     word = word
+                                    
                                     //перехожу на след список
                                     withAnimation(.linear(duration: 0.3)) {
                                         wordFormNow = wordFormNow.next
@@ -48,13 +52,13 @@ struct CreateWordFormList: View {
                                 } else {
                                     //нажав на туже словоформу
                                     //она очистится
-                                    word = word
                                     word[typeWordForm] = nil
+                                    
+                                    //инициализирую самого себя
+                                    word = word
                                 }
                                 
-                                //инициализирую самого себя чтобы
-                                //все view использующие
-                                //word обновились сразу
+                                
                                 
                             } label: {
                                 Text(wordForm.str)

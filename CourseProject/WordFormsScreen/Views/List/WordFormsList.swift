@@ -33,7 +33,7 @@ struct WordFormsList: View {
             WordFormCreateField(viewModel: createFieldViewModel)
                 .padding(.top,10)
             ForEach(wordFormsViewModel.wordForms.sorted(by: {$0.key < $1.key}), id: \.key) {key, wordForms in
-
+                
                 VStack(alignment:.leading,spacing:30) {
                     Text(key.uppercased())
                         .padding(.leading, 10)
@@ -42,7 +42,7 @@ struct WordFormsList: View {
                     
                     ForEach(wordForms.sorted(by: {$0.str < $1.str})) { wordForm in
                         WordFormRow(form: wordForm, context:managedObjectContext, wordFormType)
-                            
+                        
                     }
                     
                     

@@ -17,20 +17,18 @@ class WordsScreenViewModel : NSObject, NSFetchedResultsControllerDelegate ,Obser
         self.searchRequest = searchString.lowercased()
         //без заполненого sortDescriptors крашит приложение
         let sortDescriptors = [NSSortDescriptor(keyPath: \Word.prefix, ascending: false)]
-        //трайнуть пустой
         wordsController = Word.resultsController(context: managedObjectContext, sortDescriptors: sortDescriptors)
         
         super.init()
         wordsController.delegate = self
         try? wordsController.performFetch()
     }
-    //mb useless
+    
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         objectWillChange.send()
     }
     
     var wordsDictionary: [String:[Word]] {
-        //проверить в вью и сохранить при успехе на git
         let resoult = Functions.alphabet(words: wordsController.fetchedObjects)
         if let searchChar = searchRequest.first {
             var searchResult: [Word] = []
