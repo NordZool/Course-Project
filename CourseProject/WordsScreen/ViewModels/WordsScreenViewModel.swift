@@ -5,17 +5,20 @@
 //  Created by admin on 2.12.23.
 //
 
-import Foundation
+
 import CoreData
+import SwiftUI
 
 class WordsScreenViewModel : NSObject, NSFetchedResultsControllerDelegate ,ObservableObject, Identifiable {
     private let wordsController: NSFetchedResultsController<Word>
+    let searchRequest: String
     
-    init(managedObjectContext: NSManagedObjectContext) {
-        //если допустим у слова не будет префикса, оно его не достанет что-ли?
-        let sortDescriptor = [NSSortDescriptor(keyPath: \Word.prefix, ascending: false)]
+    init(managedObjectContext: NSManagedObjectContext, searchString:String) {
+        self.searchRequest = searchString.lowercased()
+        //без заполненого sortDescriptors крашит приложение
+        let sortDescriptors = [NSSortDescriptor(keyPath: \Word.prefix, ascending: false)]
         //трайнуть пустой
-        wordsController = Word.resultsController(context: managedObjectContext, sortDescriptors: sortDescriptor)
+        wordsController = Word.resultsController(context: managedObjectContext, sortDescriptors: sortDescriptors)
         
         super.init()
         wordsController.delegate = self
@@ -28,7 +31,28 @@ class WordsScreenViewModel : NSObject, NSFetchedResultsControllerDelegate ,Obser
     
     var wordsDictionary: [String:[Word]] {
         //проверить в вью и сохранить при успехе на git
-        Functions.alphabet(words: wordsController.fetchedObjects)
+        let resoult = Functions.alphabet(words: wordsController.fetchedObjects)
+        if let searchChar = searchRequest.first {
+            var searchResult: [Word] = []
+            
+            resoult[String(searchChar)]?.forEach { word in
+                if let wordInStr = word.getFullWord()?.lowercased() {
+                    if wordInStr.count >= searchRequest.count {
+                        if wordInStr.dropLast(wordInStr.count - searchRequest.count) == searchRequest {
+                            searchResult.append(word)
+                        }
+                    }
+                }
+            }
+            
+            if searchResult.isEmpty {
+                return ["Нету совпадений по поиску":[]]
+            } else {
+                return [String(searchChar):searchResult]
+            }
+        } else {
+            return resoult
+        }
     }
     
 }

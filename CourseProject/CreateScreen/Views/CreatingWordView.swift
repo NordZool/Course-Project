@@ -25,13 +25,16 @@ struct CreatingWordView: View {
                     ScrollView(.horizontal) {
                         HStack{
                             ForEach(WordFormsEnum.allCases, id: \.self) {wordForm in
-                                Text(viewModel.word[wordForm] ?? "...")
-                                    .padding(.horizontal,10)
-                                    .foregroundColor(wordForm == wordFormNow ? .black : .gray)
-                                    .font(.title3)
-                                    .fontWeight(.medium)
-                                    .id(wordForm)
-                                    .padding(.vertical,7)
+                                VStack {
+                                    Text(viewModel.word[wordForm] ?? "...")
+                                        .padding(.horizontal,10)
+                                        .foregroundColor(wordForm == wordFormNow ? .black : .gray)
+                                        .font(.title3)
+                                        .fontWeight(.medium)
+                                        .id(wordForm)
+                                        .padding(.vertical,7)
+                                }
+                                
                             }
                         }
                     }

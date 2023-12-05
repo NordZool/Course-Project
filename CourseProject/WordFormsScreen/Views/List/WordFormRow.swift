@@ -73,7 +73,7 @@ struct WordFormRow: View {
                     .opacity(0)
                 
                 HStack {
-                    TextField("Ввод...", text:$editText )
+                    TextField(form.str, text:$editText )
                         .foregroundStyle(.black)
                         .padding(5)
                         .font(.title2)

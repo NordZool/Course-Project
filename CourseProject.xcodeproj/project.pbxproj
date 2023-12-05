@@ -133,6 +133,15 @@
 			path = MainScreen;
 			sourceTree = "<group>";
 		};
+		8467B0A62B1F658C0048B7DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84CA2C5C2B1B3FD100BCFF9C /* WordsScreen.swift */,
+				84CA2C642B1B958800BCFF9C /* List */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8499F6822B187CC20032DF59 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +190,7 @@
 		8499F6932B187DF00032DF59 /* WordsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				84CA2C5C2B1B3FD100BCFF9C /* WordsScreen.swift */,
-				84CA2C642B1B958800BCFF9C /* List */,
+				8467B0A62B1F658C0048B7DB /* Views */,
 				84CA2C5E2B1B401900BCFF9C /* ViewModels */,
 			);
 			path = WordsScreen;
@@ -245,8 +253,8 @@
 		8499F6A62B187F380032DF59 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8499F6AD2B187F9E0032DF59 /* CreateWordFormList.swift */,
 				8499F6A92B187F760032DF59 /* CreateScreenView.swift */,
+				8499F6AD2B187F9E0032DF59 /* CreateWordFormList.swift */,
 				8499F6AB2B187F8C0032DF59 /* CreatingWordView.swift */,
 			);
 			path = Views;

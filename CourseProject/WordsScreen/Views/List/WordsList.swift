@@ -14,12 +14,15 @@ struct WordsList: View {
             VStack(alignment:.leading) {
                 
                 ForEach(viewModel.wordsDictionary.sorted(by: {$0.key < $1.key}), id: \.key) {key, values in
-                    Text(key)
+                    Text(key.uppercased())
                         .padding(.leading, 10)
                         .font(.title)
+                        
                     ForEach(values) {word in
                             WordRow(word: word)
                                 .font(.title2)
+                                .padding(.leading,40)
+                                
                         
                         
                     }
@@ -28,16 +31,25 @@ struct WordsList: View {
                 Spacer()
             }
         }
+        
+        
     }
 }
 
 
+
+
 fileprivate struct Test : View {
-    @ObservedObject var vm: WordsScreenViewModel = WordsScreenViewModel(managedObjectContext: Provider.shared.viewContext)
+    @ObservedObject var vm: WordsScreenViewModel
+    
+    init() {
+        self.vm = WordsScreenViewModel(managedObjectContext: Provider.shared.viewContext, searchString: "")
+    }
     var body: some View {
         WordsList(viewModel: vm)
     }
 }
 #Preview {
     Test()
+        .environment(\.managedObjectContext, Provider.shared.viewContext)
 }

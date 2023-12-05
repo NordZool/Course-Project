@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct WordRow: View {
     @ObservedObject var word: Word
+    @Environment(\.managedObjectContext) private var managedObjectContext: NSManagedObjectContext
     
     var body: some View {
         HStack(spacing:0) {
@@ -18,23 +20,30 @@ struct WordRow: View {
                     ForEach(WordFormsEnum.allCases, id:\.self) { wordFormType in
                         if let wordForm = word[wordFormType] {
                             VStack {
-                               WordFormMark(as: wordFormType)
+                                WordFormMark(as: wordFormType)
                                 Text(wordForm)
                             }
                             .foregroundStyle(Functions.wordFormToColor(as: wordFormType))
                             .padding(.vertical)
+                            
                         }
                     }
                 }
             }
-            .padding(.leading, 20)
+            .padding(.trailing,10)
             .font(.title2)
             
             Button(role:.destructive) {
-                //some destructive
+                managedObjectContext.delete(word)
+                do {
+                    try managedObjectContext.save()
+                } catch {
+                    print(error)
+                }
             } label: {
                 Image(systemName: "trash")
             }
+            
             .offset(x:-10,y:-30)
             .font(.headline)
             
@@ -47,11 +56,11 @@ struct WordRow: View {
 
 //preview below
 fileprivate struct Test : View {
-    @ObservedObject var vm: WordsScreenViewModel = WordsScreenViewModel(managedObjectContext: Provider.shared.viewContext)
     var body: some View {
-        WordRow(word: vm.wordsDictionary.first!.value.first!)
+        WordRow(word: WordsScreenViewModel(managedObjectContext: Provider.shared.viewContext, searchString: "").wordsDictionary.first!.value.first!)
     }
 }
 #Preview {
     Test()
+        .environment(\.managedObjectContext, Provider.shared.viewContext)
 }
