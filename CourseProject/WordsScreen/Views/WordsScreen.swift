@@ -13,13 +13,18 @@ struct WordsScreen: View {
     var provider: Provider
     
     var body: some View {
-        
-        //Доделать TextField 
-        //добавить title "Слова"
-        //добавить кнопку "Back"
-        //добавить Divider
-        TextField("Найти слово", text: $search)
-        WordsList(viewModel: WordsScreenViewModel(managedObjectContext: provider.viewContext, searchString: search))
+        ZStack {
+            VStack {
+                Text("Слова")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                WordsSearchView(searchText: $search)
+                Divider()
+                    .offset(y:7)
+                WordsList(viewModel: WordsScreenViewModel(managedObjectContext: provider.viewContext, searchString: search))
+            }
+            BackButton()
+        }
     }
 }
 

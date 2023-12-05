@@ -46,7 +46,7 @@ class WordsScreenViewModel : NSObject, NSFetchedResultsControllerDelegate ,Obser
             }
             
             if searchResult.isEmpty {
-                return ["Нету совпадений по поиску":[]]
+                return [:]
             } else {
                 return [String(searchChar):searchResult]
             }
