@@ -21,7 +21,7 @@ class CreateFieldViewModel : ObservableObject {
     
     func createWordForm(from text:String) {
         //переопределяю text
-        let text = Functions.correct(str: text, as: wordFormType)
+        let text = Functions.correct(str: text)
         
         //если такой словоформы еще нету
         if !(Functions.contains(str: text, in: wordFormType, context)) {

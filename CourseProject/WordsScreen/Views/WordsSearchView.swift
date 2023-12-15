@@ -24,22 +24,29 @@ struct WordsSearchView: View {
             } label: {
                 ZStack {
                     Image(systemName: "magnifyingglass.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .foregroundStyle(searchIsFocused ? .red : .black)
                         .scaleEffect(searchIsFocused ? 0 : 1)
                         .animation(animation, value: searchIsFocused)
                     Image(systemName: "multiply.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .foregroundStyle(searchIsFocused ? .red : .black)
                         .scaleEffect(searchIsFocused ? 1 : 0)
                         .animation(animation, value: searchIsFocused)
                 }
+                .frame(height: 25)
+                
             }
             
             
             
             
             Capsule()
-                .frame(width: 2,height: 16)
+                .frame(width: 2,height: 25)
             TextField("Поиск...", text: $searchText)
+                .frame(height: 40)
                 .focused($searchIsFocused)
         }
         .padding(.horizontal,10)

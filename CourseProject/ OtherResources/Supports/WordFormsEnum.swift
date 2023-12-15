@@ -1,12 +1,12 @@
 
 
-import Foundation
+
 
 enum WordFormsEnum : String, CaseIterable, Hashable {
     case pref = "Приставка"
     case rt = "Корень"
     case suf = "Суффикс"
-    case postf = "Постфикс"
+    case postf = "Окончание"
     
     var next: WordFormsEnum {
         switch self {

@@ -13,7 +13,7 @@ struct CreateScreenView: View {
     @Environment(\.managedObjectContext) private var managedObjectContext
     
     //viewModel (через информацию из View составит нужную модель данных)
-    @StateObject var viewModel: CreateScreenViewModel
+    @ObservedObject var viewModel: CreateScreenViewModel
     
     //изначально будет открыт раздел приставок
     @State private var wordFormNow = WordFormsEnum.pref

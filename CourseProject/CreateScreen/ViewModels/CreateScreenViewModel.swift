@@ -5,8 +5,8 @@
 //  Created by admin on 21.11.23.
 //
 
-import Foundation
 import CoreData
+import SwiftUI
 
 class CreateScreenViewModel : ObservableObject {
     @Published var word: Word

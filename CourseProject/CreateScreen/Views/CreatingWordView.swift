@@ -125,8 +125,6 @@ struct CreatingWordView: View {
             Divider()
         }
     }
-    
-    private func createAlert() {}
 }
 
 fileprivate struct Test: View {

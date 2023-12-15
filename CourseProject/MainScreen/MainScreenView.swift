@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MainScreen: View {
     var provider = Provider.shared
@@ -13,7 +14,7 @@ struct MainScreen: View {
     var body: some View {
         NavigationStack {
             VStack {
-                //Лэйбл приложения
+//                Лэйбл приложения
                 HStack {
                     Text("Word Composition")
                         .font(.title)
@@ -37,7 +38,7 @@ struct MainScreen: View {
                 }
                 
                 NavigationLink {
-                    WordsScreen(provider: Provider.shared)
+                    WordsScreen(provider: provider)
                         .toolbar(.hidden)
                 } label: {
                     Text("Список слов")
@@ -57,6 +58,9 @@ struct MainScreen: View {
                 }
                 .padding(.top,40)
             }
+            
+            
+            //test area below
             
         }
     }

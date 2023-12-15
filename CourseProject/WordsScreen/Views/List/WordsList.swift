@@ -22,11 +22,7 @@ struct WordsList: View {
                         WordRow(word: word)
                             .font(.title2)
                             .padding(.leading,40)
-                        
-                        
-                        
                     }
-                    
                 }
                 Spacer()
             }

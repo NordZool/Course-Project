@@ -5,7 +5,7 @@
 //  Created by admin on 21.11.23.
 //
 
-import Foundation
+
 import CoreData
 import SwiftUI
 
@@ -73,17 +73,12 @@ struct Functions {
     //преобразует введенный пользователем текст в
     //корректный для словоформ.
     //Ипользуется в CreateFieldViewModel и WordFormRow
-    static func correct(str: String, as form:WordFormsEnum) -> String {
+    static func correct(str: String) -> String {
         let sumbolsForDelete =  " .,;:'/|[]{}!?@#$%^&*()_-+=><"
         //удаляем бессмысленные символы
         var text:String = str.filter({!sumbolsForDelete.contains($0)})
         
         text = text.lowercased()
-        if form == .pref {
-            //делаем первую букву заглавной
-            //т.к приставка - начало слова
-            text = ((text.first?.uppercased() ?? "") + text.dropFirst(1))
-        }
         
         return text
     }

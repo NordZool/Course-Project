@@ -27,14 +27,14 @@ struct CreateWordFormList: View {
     
     var body: some View {
         ScrollView {
-            ForEach(Array(wordFormsDictionary.keys).sorted(by: <), id: \.self) { wordFormKey in
+            ForEach(wordFormsDictionary.sorted(by:{$0.key < $1.key}), id: \.key) { key, value in
                 
                 VStack(alignment:.leading,spacing: 15) {
-                    Text(wordFormKey.uppercased())
+                    Text(key.uppercased())
                         .padding(.leading, 10)
                         .font(.title)
                     
-                    ForEach(wordFormsDictionary[wordFormKey]!.sorted(by: {$0.str < $1.str})) { wordForm in
+                    ForEach(value.sorted(by: {$0.str < $1.str})) { wordForm in
                         HStack {
                             Button {
                                 if word[typeWordForm] != wordForm.str {

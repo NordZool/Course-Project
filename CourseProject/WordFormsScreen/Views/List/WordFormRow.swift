@@ -11,7 +11,7 @@ import CoreData
 struct WordFormRow: View {
     //only for save changes
     var context: NSManagedObjectContext
-    //only for correct text
+    //only for Functions.contains
     let wordFormType: WordFormsEnum
     
     @ObservedObject var form: WordForm
@@ -98,7 +98,7 @@ struct WordFormRow: View {
                                 //при расфокусе автоматически
                                 //сохраняем измененные данные
                                 
-                                editText = Functions.correct(str: editText, as: wordFormType)
+                                editText = Functions.correct(str: editText)
                                 
                                 //если такая слоформа существует -
                                 //удалить ее.
